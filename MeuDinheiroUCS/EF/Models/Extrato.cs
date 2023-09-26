@@ -11,7 +11,7 @@ namespace MeuDinheiroUCS.EF.Models
     {
         [Key]
         public int id { get; set; }
-        public float Valor { get; set; }
+        public double Valor { get; set; }
         public string Descricao { get; set; }
         public int ContaID { get; set; }
     }

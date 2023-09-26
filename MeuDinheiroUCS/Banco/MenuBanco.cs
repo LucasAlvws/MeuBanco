@@ -1,4 +1,5 @@
 ﻿using MeuDinheiroUCS.Banco.BancoCliente;
+using MeuDinheiroUCS.Banco.BancoConta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace MeuDinheiroUCS.Banco
             {
                 Console.Clear();
                 MenuCliente.show();
+            }
+            else if (scomando == "2")
+            {
+                Console.Clear();
+                MenuConta.show();
             }
            
         }

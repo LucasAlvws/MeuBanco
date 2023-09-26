@@ -1,0 +1,28 @@
+CREATE DATABASE UCSBANCOTRABALHO
+CREATE TABLE Cliente (
+    id INT,
+    Nome NVARCHAR(100),
+    Sobrenome NVARCHAR(100),
+    Telefone NVARCHAR(20),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Conta (
+    id INT IDENTITY(1,1),
+    Codigo INT,
+    Saldo FLOAT DEFAULT 0.00,
+    ClienteID INT FOREIGN KEY REFERENCES Cliente(id)
+    PRIMARY KEY (Codigo)
+);
+
+CREATE TABLE Extrato (
+    id INT IDENTITY(1,1),
+    Valor FLOAT,
+    Descricao NVARCHAR(100),
+    ContaID INT FOREIGN KEY REFERENCES Conta(Codigo)
+    PRIMARY KEY (id)
+);
+
+SELECT * from Cliente
+SELECT * from Conta
+SELECT * from Extrato

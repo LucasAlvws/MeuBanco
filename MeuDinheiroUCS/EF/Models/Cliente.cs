@@ -14,6 +14,6 @@ namespace MeuDinheiroUCS.EF.Models
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Telefone { get; set; }
-        public int CodigoConta { get; set; }
+
     }
 }

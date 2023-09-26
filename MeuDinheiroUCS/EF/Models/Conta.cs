@@ -12,7 +12,7 @@ namespace MeuDinheiroUCS.EF.Models
         [Key]
         public int id { get; set; }
         public int Codigo { get; set; }
-        public float Saldo { get; set; }
+        public double Saldo { get; set; }
         public int ClienteID { get; set; }
 
     }

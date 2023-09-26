@@ -19,7 +19,7 @@ namespace MeuDinheiroUCS.EF.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=localhost;User Id=sa;Password=blog_6109;Database=UCSBANCO;TrustServerCertificate=True";
+            string connectionString = "Server=localhost;User Id=sa;Password=blog_6109;Database=UCSBANCOTRABALHO;TrustServerCertificate=True";
             optionsBuilder.UseSqlServer(connectionString);
         }
 
@@ -45,7 +45,6 @@ namespace MeuDinheiroUCS.EF.Context
             NewCliente.Nome = nomecli;
             NewCliente.Sobrenome = sobrenomecli;
             NewCliente.Telefone = telefonecli;
-            NewCliente.CodigoConta = numeroConta;
             NewConta.id = 1;
             NewConta.Codigo = numeroConta;
             NewConta.ClienteID = 1;
@@ -61,18 +60,15 @@ namespace MeuDinheiroUCS.EF.Context
 
             foreach (var item in clientes)
             {
-                Console.WriteLine($"Codigo: {item.id}");
-                item.Nome = "Nicoly";
-                
+                Console.WriteLine($"Codigo: {item.id}"); 
             }
             Cliente lucas = new Cliente();
             lucas.Nome = "Lucas";
             lucas.Sobrenome = "Alves";
             lucas.Telefone = "32126238";
-            lucas.CodigoConta = 5254;
             ctx.Cliente.Add(lucas);
             ctx.SaveChanges();
-
+            
         }
     }
 }
