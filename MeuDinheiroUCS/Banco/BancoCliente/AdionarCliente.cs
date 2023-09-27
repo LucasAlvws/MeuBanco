@@ -12,30 +12,46 @@ namespace MeuDinheiroUCS.Banco.BancoCliente
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
+            
             Console.Clear();
             Console.WriteLine("Adicionar Cliente:");
             Console.Write("Qual o codigo do cliente: ");
             string codigo = Console.ReadLine();
+            if (ctx.Cliente.Where(x => x.id == int.Parse(codigo)).FirstOrDefault() != null)
+            {
+                Console.Write("Qual o nome do cliente: ");
+                string nome = Console.ReadLine();
 
-            Console.Write("Qual o nome do cliente: ");
-            string nome = Console.ReadLine();
+                Console.Write("Qual o sobrenome do cliente: ");
+                string sobrenome = Console.ReadLine();
 
-            Console.Write("Qual o sobrenome do cliente: ");
-            string sobrenome = Console.ReadLine();
+                Console.Write("Qual o telefone do cliente: ");
+                string telefone = Console.ReadLine();
 
-            Console.Write("Qual o telefone do cliente: ");
-            string telefone = Console.ReadLine();
-
-            Cliente NewCliente = new Cliente();
-            NewCliente.id = int.Parse(codigo);
-            NewCliente.Nome = nome;
-            NewCliente.Sobrenome = sobrenome;
-            NewCliente.Telefone = telefone;
-            ctx.Cliente.Add(NewCliente);
-            ctx.SaveChanges();
-            Console.WriteLine("Cliente adicionado...");
-            Console.ReadLine();
+                Cliente NewCliente = new Cliente();
+                NewCliente.id = int.Parse(codigo);
+                NewCliente.Nome = nome;
+                NewCliente.Sobrenome = sobrenome;
+                NewCliente.Telefone = telefone;
+                ctx.Cliente.Add(NewCliente);
+                ctx.SaveChanges();
+                Console.WriteLine("Cliente adicionado...");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Código jjá existe...");
+                Console.ReadLine();
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
         }
+
     }
 }

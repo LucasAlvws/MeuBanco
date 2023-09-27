@@ -30,7 +30,7 @@ namespace MeuDinheiroUCS.EF.Context
         }
 
 
-        public static void CriarContaCliente(string nomecli, string sobrenomecli, string telefonecli)
+        /*public static void CriarContaCliente(string nomecli, string sobrenomecli, string telefonecli)
         {
             
             BancoContext ctx = new();
@@ -69,6 +69,6 @@ namespace MeuDinheiroUCS.EF.Context
             ctx.Cliente.Add(lucas);
             ctx.SaveChanges();
             
-        }
+        }*/
     }
 }

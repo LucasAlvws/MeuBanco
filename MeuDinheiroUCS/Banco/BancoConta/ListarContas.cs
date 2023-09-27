@@ -11,6 +11,7 @@ namespace MeuDinheiroUCS.Banco.BancoConta
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
             var ctx2 = new BancoContext();
             Console.Clear();
@@ -27,7 +28,12 @@ namespace MeuDinheiroUCS.Banco.BancoConta
             }
             Console.WriteLine("Precione qualquer botão para voltar...");
             Console.ReadLine();
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
         }
     }
 }

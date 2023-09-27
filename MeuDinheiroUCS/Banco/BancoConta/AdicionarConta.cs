@@ -12,7 +12,7 @@ namespace MeuDinheiroUCS.Banco.BancoConta
     {
         public static void Run()
         {
-            
+            try { 
             var ctx = new BancoContext();
             Console.Clear();
             Console.WriteLine("Adicionar Conta:");
@@ -45,7 +45,13 @@ namespace MeuDinheiroUCS.Banco.BancoConta
                 Console.WriteLine("Cliente não existe...");
                 Console.ReadLine();
             }
-            
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
+
         }
     }
 }

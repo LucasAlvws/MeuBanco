@@ -11,6 +11,7 @@ namespace MeuDinheiroUCS.Banco.BancoConta.BancoExtrato
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
             Console.Clear();
             Console.Write("Qual o codigo da conta: ");
@@ -37,7 +38,12 @@ namespace MeuDinheiroUCS.Banco.BancoConta.BancoExtrato
                 Console.WriteLine("Precione qualquer botão para voltar...");
                 Console.ReadLine();
             }
-            
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
 
         }
     }

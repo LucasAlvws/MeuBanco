@@ -11,6 +11,7 @@ namespace MeuDinheiroUCS.Banco.BancoConta
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
             Console.WriteLine("Deletar Conta:");
             Console.Write("Qual o codigo da conta a ser deletado: ");
@@ -27,6 +28,12 @@ namespace MeuDinheiroUCS.Banco.BancoConta
                 ctx.Conta.Remove(conta);
                 ctx.SaveChanges();
                 Console.WriteLine("Conta deletada...");
+                Console.ReadLine();
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
                 Console.ReadLine();
             }
         }

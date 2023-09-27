@@ -23,6 +23,10 @@ namespace MeuDinheiroUCS.Banco
                 Console.Clear();
                 MenuConta.show();
             }
+            else if(scomando == "3") {
+                Environment.Exit(0);
+            }
+            
            
         }
 
@@ -34,6 +38,7 @@ namespace MeuDinheiroUCS.Banco
                 Console.WriteLine("+++MeuDinUCS+++");
                 Console.WriteLine("1. Clientes");
                 Console.WriteLine("2. Contas");
+                Console.WriteLine("3. Sair");
                 Console.WriteLine("Comando:");
                 comando();
             }

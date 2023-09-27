@@ -11,6 +11,7 @@ namespace MeuDinheiroUCS.Banco.BancoCliente
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
             Console.WriteLine("Deletar Cliente:");
             Console.Write("Qual o codigo do cliente a ser deletado: ");
@@ -27,6 +28,12 @@ namespace MeuDinheiroUCS.Banco.BancoCliente
                 ctx.Cliente.Remove(cli);
                 ctx.SaveChanges();
                 Console.WriteLine("Cliente deletado...");
+                Console.ReadLine();
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
                 Console.ReadLine();
             }
         }

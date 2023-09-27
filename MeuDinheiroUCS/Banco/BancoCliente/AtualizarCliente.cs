@@ -11,6 +11,7 @@ namespace MeuDinheiroUCS.Banco.BancoCliente
     {
         public static void Run()
         {
+            try { 
             var ctx = new BancoContext();
             Console.Clear();
             Console.WriteLine("Atualizr Cliente:");
@@ -46,7 +47,12 @@ namespace MeuDinheiroUCS.Banco.BancoCliente
             ctx.SaveChanges();
             Console.WriteLine("Cliente atualizado...");
             Console.ReadLine();
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
         }
 
     }
